@@ -1,0 +1,15 @@
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\bin\Debug\SpeechToText.exe.config
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\bin\Debug\SpeechToText.exe
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\bin\Debug\SpeechToText.pdb
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.csprojResolveAssemblyReference.cache
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\MainWindow.g.cs
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\App.g.cs
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText_MarkupCompile.cache
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText_MarkupCompile.lref
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\MainWindow.baml
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.g.resources
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.Properties.Resources.resources
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.csproj.GenerateResource.Cache
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.exe
+C:\Users\Andrew\source\repos\SpeechToText\SpeechToText\obj\Debug\SpeechToText.pdb
