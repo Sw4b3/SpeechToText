@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Speech.Recognition;
 using System.Speech.Synthesis;
+using System.IO;
 
 namespace SpeechToText
 {
@@ -25,14 +26,14 @@ namespace SpeechToText
         SpeechRecognitionEngine engine = new SpeechRecognitionEngine();
         SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         Choices commands = new Choices();
-        GrammarBuilder grammarBuilder = new GrammarBuilder();
-        
+
 
         public MainWindow()
         {
-            commands.Add(new string[] { "hello", "print my name", "how are you", "stop listening","close" });
-            grammarBuilder.Append(commands);
-            Grammar grammar = new Grammar(grammarBuilder);
+
+            string[] lines = File.ReadAllLines(".\\grammar.txt");
+            commands.Add(lines);
+            Grammar grammar = new Grammar(new GrammarBuilder(commands));
             engine.LoadGrammarAsync(grammar);
             engine.SetInputToDefaultAudioDevice();
             engine.SpeechRecognized += engine_speechRecognized;
@@ -45,21 +46,25 @@ namespace SpeechToText
         {
             switch (e.Result.Text) {
                 case "hello":
-                    textbox1.Text = "Hello Andrew";
-                    speechSynthesizer.Speak("Hello Andrew");
-                    break;
-                case "print my name":
-                    textbox1.Text="Andrew Schwabe";
-                    speechSynthesizer.Speak("Andrew Schwabe");
+                    textbox1.AppendText( "Hello \n");
+                    speechSynthesizer.Speak("Hello");
                     break;
                 case "how are you":
-                    textbox1.Text = "I am good";
+                    textbox1.AppendText("I am good \n");
                     speechSynthesizer.Speak("I am good");
                     break;
                 case "stop listening":
                     engine.RecognizeAsyncStop();
-                    textbox1.Text = "Mic stopped";
+                    textbox1.AppendText("Mic stopped \n");
                     speechSynthesizer.Speak("Mic stopped");
+                    break;
+                case "play audio":
+                    textbox1.AppendText("Playing audio \n");
+                    speechSynthesizer.Speak("Playing audio");
+                    break;
+                case "stop audio":
+                    textbox1.AppendText("Stopping Audio \n");
+                    speechSynthesizer.Speak("Stopping Audio");
                     break;
                 case "close":
                     this.Close();
@@ -69,11 +74,15 @@ namespace SpeechToText
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            textbox1.AppendText("Starting Mic \n");
+            speechSynthesizer.Speak("Starting Mic");
             engine.RecognizeAsync(RecognizeMode.Multiple);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            textbox1.AppendText("Stopping Mic \n");
+            speechSynthesizer.Speak("Stopping Mic");
             engine.RecognizeAsyncStop();
         }
     }

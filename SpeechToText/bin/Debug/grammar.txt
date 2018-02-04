@@ -1,0 +1,6 @@
+﻿hello
+how are you
+stop listening
+close
+play audio
+stop audio
